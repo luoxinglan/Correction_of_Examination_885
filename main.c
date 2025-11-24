@@ -16,7 +16,7 @@ int main(void) {
     sumKKK(3, 2);
     unevenN(4);
     mergeSortStrings();
-    // permutationSub();//没在头文件中声明的其他文件的函数无法使用
+    // permutationSub();//没在头文件中声明的其他文件函数无法使用
     permutation(3);
     processLink2Data(8);
     /*

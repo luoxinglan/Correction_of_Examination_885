@@ -18,7 +18,7 @@
 #include <stdio.h>
 
 /**
- * 解释了各种数据类型的字节大小。
+ * 解释了各种数据类型的字节大小
  */
 void sizeOfType() {
     printf("Size of char=%d\n", (int) sizeof(char));

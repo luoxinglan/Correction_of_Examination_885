@@ -38,7 +38,7 @@ typedef struct LNode2Data {
         *LinkList2Data; //LNode2Data*别名为LinkList2Data
 
 /**
- * 树结点定义
+ * 树结点的定义
  */
 typedef struct TreeNode {
     int data;
