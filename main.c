@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * 当你想分享你的项目时，必须将其推送到上游。
  * 这个命令很简单：git push <remote> <branch>。
@@ -9,8 +8,30 @@
  * 新项目开始时，先 clone 远程仓库，而不是 git init + git remote add。
  * 如果必须本地初始化，可先 git clone 空仓库，再把代码复制进去。
  */
+#include "test2013.h"
 
 int main(void) {
-    printf("Hello, World!\n");
+    sizeOfType();
+    importantChar();
+    sumKKK(3, 2);
+    unevenN(4);
+    mergeSortStrings();
+    // permutationSub();//没在头文件中声明的其他文件的函数无法使用
+    permutation(3);
+    processLink2Data(8);
+    /*
+      15 16
+      15 19
+      15 10
+      15 17
+      14 16
+      14 10
+      14 16
+      14 9
+     */
+    processLinkList(3);
+    processBST();
+    testCountLeafNodes();
+    convertToOctal(17);
     return 0;
 }
