@@ -13,9 +13,10 @@
  * 源文件通常会包含相应的头文件，以获取必要的声明和定义。
  */
 
-#include "test2013.h"
+#include "../include/test2013.h"
 
 #include <stdio.h>
+#include <time.h>
 
 /**
  * 解释了各种数据类型的字节大小
@@ -362,6 +363,24 @@ void testCountLeafNodes() {
     TreeNode *t = createBST(nums, n);
     printf("%d\n", countLeafNodes(t));
 }
+
+/**
+ * 任意建立一个二叉排序树
+ * @return 返回一个任意数组建立的二叉排序树。
+ */
+Tree initTree() {
+    //首先随便初始化一个树。就创建一个BST吧。
+    int nums[] = {7, 4, 5, 6, 1, 8, 1};
+    int n = 7;
+    // int nums[MaxSize];
+    // srand(time(0)); // 设置随机数种子
+    // for (int i = 0; i < MaxSize; i++) {
+    //     nums[i] = rand() % 5; // 生成随机数并赋值给数组元素
+    // }
+    TreeNode *t = createBST(nums, 7);
+    return t;
+}
+
 
 /**
  * 算法题4正确：已知一个无符号整数number，写一算法，将其转换为八进制数(要求用链栈来实现)

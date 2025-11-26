@@ -83,5 +83,7 @@ int countLeafNodes(TreeNode *t);
 
 void testCountLeafNodes();
 
+Tree initTree();
+
 void convertToOctal(int number);
 #endif //TEST2013_H

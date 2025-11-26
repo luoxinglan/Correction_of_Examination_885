@@ -8,17 +8,21 @@
  * 新项目开始时，先 clone 远程仓库，而不是 git init + git remote add。
  * 如果必须本地初始化，可先 git clone 空仓库，再把代码复制进去。
  */
-#include "test2013.h"
+#include "../include/test2013.h"
+#include "../include/test2014.h"
 
 int main(void) {
     sizeOfType();
     importantChar();
-    sumKKK(3, 2);
-    unevenN(4);
-    mergeSortStrings();
+    showCharConst();
+
+    /*******2013*******/
+    // sumKKK(3, 2);
+    // unevenN(4);
+    // mergeSortStrings();
     // permutationSub();//没在头文件中声明的其他文件函数无法使用
-    permutation(3);
-    processLink2Data(8);
+    // permutation(3);
+    // processLink2Data(8);
     /*
       15 16
       15 19
@@ -29,9 +33,17 @@ int main(void) {
       14 16
       14 9
      */
-    processLinkList(3);
-    processBST();
-    testCountLeafNodes();
-    convertToOctal(17);
+    // processLinkList(3);
+    // processBST();
+    // testCountLeafNodes();
+    // convertToOctal(17);
+
+
+    /********2014*******/
+    // mergeStrings2();
+    // sumOfSequence(1);
+    // S_R_substring();
+    // partitionSqList();
+    // searchTreeXLevel(1);
     return 0;
 }
