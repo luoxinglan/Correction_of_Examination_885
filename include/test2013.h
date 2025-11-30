@@ -17,15 +17,7 @@
 
 #ifndef TEST2013_H
 #define TEST2013_H
-#define MaxSize 20
-
-/**
- * 单链表数据结构定义
- */
-typedef struct LNode {
-    int data;
-    struct LNode *next;
-} LNode, *LinkList;
+#include "my_tree.h"
 
 /**
  * 双数据链表数据结构定义
@@ -37,15 +29,6 @@ typedef struct LNode2Data {
 } LNode2Data, //LNode2Data别名为LNode2Data
         *LinkList2Data; //LNode2Data*别名为LinkList2Data
 
-/**
- * 树结点的定义
- */
-typedef struct TreeNode {
-    int data;
-    struct TreeNode *left;
-    struct TreeNode *right;
-} TreeNode, *Tree;
-
 
 void sizeOfType();
 
@@ -55,7 +38,7 @@ void sumKKK(int n, int k);
 
 void unevenN(int n);
 
-void mergeSortStrings();
+void mergeSortStrings2013();
 
 void permutation(int n);
 
@@ -67,15 +50,9 @@ void bubbleSortList2Data(LinkList2Data l);
 
 void processLink2Data(int n);
 
-void initLinkList(LinkList l, int n);
-
-void reverseLinkList(LinkList l);
-
-void outputLinkList(LinkList l);
 
 void processLinkList(int n);
 
-TreeNode *createBST(int nums[], int numsSize);
 
 void processBST();
 
@@ -83,7 +60,6 @@ int countLeafNodes(TreeNode *t);
 
 void testCountLeafNodes();
 
-Tree initTree();
 
 void convertToOctal(int number);
 #endif //TEST2013_H

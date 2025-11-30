@@ -14,6 +14,7 @@
  */
 
 #include "../include/test2013.h"
+#include "../include/config.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -22,6 +23,15 @@
  * 解释了各种数据类型的字节大小
  */
 void sizeOfType() {
+    struct data {
+        char c; //1
+        int i; //4
+        long l; //4
+        float f; //4
+        long long ll; //8
+        double d; //8
+    } A; //32=4*8->说明在此编译器中是对齐的，题目中不对齐
+    printf("Size of struct data A=%d\n", (int) sizeof(A));
     printf("Size of char=%d\n", (int) sizeof(char));
     printf("Size of int=%d\n", (int) sizeof(int));
     printf("Size of long int=%d\n", (int) sizeof(long int));
@@ -93,23 +103,20 @@ void unevenN(int n) {
 //代码题3正确：输入两个字符串，将两个学符事合并，并按照ASCII码顺序将合并后的字符串输出。
 #include <string.h>
 #include <stdlib.h>//有qsort
-
-int cmp(const void *a, const void *b) {
-    return *(char *) a - *(char *) b;
-}
+#include "../include/compare.h"
 
 /**
  * 代码题3正确：输入两个字符串，将两个学符事合并，并按照ASCII码顺序将合并后的字符串输出。
  */
-void mergeSortStrings() {
-    char s1[MaxSize] = "default"; //可以不用初始化，反正输入以后后面截断了。
+void mergeSortStrings2013() {
+    char s1[MaxSize * 2] = "default"; //可以不用初始化，反正输入以后后面截断了。
     char s2[MaxSize] = "another";
     // printf("Enter String 1: ");
     // scanf("%s", s1);
     // printf("Enter String 2: ");
     // scanf("%s", s2);
     strcat(s1, s2);
-    qsort(s1, strlen(s1), sizeof(char), cmp);
+    qsort(s1, strlen(s1), sizeof(char), charCmp);
     printf("%s\n\n", s1);
 }
 
@@ -213,69 +220,7 @@ void processLink2Data(int n) {
     bubbleSortList2Data(l);
 }
 
-
-//原地逆置单链表
-/**
- * 头插法插入单链表
- * @param l 头结点指针。
- * @param n 待插入的数据
- */
-void headInsert(LinkList l, int n) {
-    if (l == NULL) {
-        return;
-    }
-    LNode *p = (LNode *) malloc(sizeof(LNode));
-    p->data = n;
-    p->next = l->next;
-    l->next = p;
-}
-
-/**
- * 初始化单链表
- * @param l 单链表头结点指针
- * @param n 待插入的数据
- */
-void initLinkList(LinkList l, int n) {
-    if (l == NULL) {
-        return;
-    }
-    l->next = NULL;
-    for (int i = 0; i < n; i++) {
-        // LNode *p = (LNode *) malloc(sizeof(LNode));
-        printf("please enter %d node: ", i);
-        int temp = 0;
-        scanf("%d", &temp);
-        headInsert(l, temp);
-    }
-}
-
-/**
- * 原地逆置单链表
- * @param l 单链表头结点指针
- */
-void reverseLinkList(LinkList l) {
-    if (l == NULL) {
-        return;
-    }
-    LNode *p, *q;
-    for (p = l->next, l->next = NULL, q = p->next; p; p = q) {
-        q = p->next;
-        p->next = l->next;
-        l->next = p;
-    }
-}
-
-/**
- * 输出单链表
- * @param l 单链表头结点指针
- */
-void outputLinkList(LinkList l) {
-    for (LNode *p = l->next; p; p = p->next) {
-        printf("%3d", p->data);
-    }
-    printf("\n");
-}
-
+#include "../include/my_link.h"
 /**
  * 算法题1正确：原地逆置单链表
  * @param l 单链表头结点指针
@@ -288,46 +233,6 @@ void processLinkList(int n) {
     outputLinkList(l);
 }
 
-//建立二叉排序树
-/**
- * 根据数组建立一个二叉排序树
- * @param nums 待插入的数组
- * @param numsSize 数组大小
- * @return 返回树的根结点指针
- */
-TreeNode *createBST(int nums[], int numsSize) {
-    TreeNode *t = (TreeNode *) malloc(sizeof(TreeNode));
-    t->data = nums[0];
-    t->left = NULL;
-    t->right = NULL;
-    for (int i = 1; i < numsSize; i++) {
-        //初始化一个结点
-        TreeNode *new = (TreeNode *) malloc(sizeof(TreeNode));
-        new->data = nums[i];
-        new->left = NULL;
-        new->right = NULL;
-        //查找待插入位置
-        TreeNode *p = t;
-        while (true) {
-            if (nums[i] < p->data) {
-                //小于，在左子树
-                if (p->left == NULL) {
-                    //左子树为空
-                    p->left = new;
-                    break;
-                }
-                p = p->left; //一直到左子树为空
-            } else {
-                if (p->right == NULL) {
-                    p->right = new;
-                    break;
-                }
-                p = p->right;
-            }
-        } //插入一个结点nums[i]完成
-    } //全部插入完成
-    return t;
-}
 
 /**
  * 算法题2正确：建立一个二叉排序树
@@ -364,24 +269,8 @@ void testCountLeafNodes() {
     printf("%d\n", countLeafNodes(t));
 }
 
-/**
- * 任意建立一个二叉排序树
- * @return 返回一个任意数组建立的二叉排序树。
- */
-Tree initTree() {
-    //首先随便初始化一个树。就创建一个BST吧。
-    int nums[] = {7, 4, 5, 6, 1, 8, 1};
-    int n = 7;
-    // int nums[MaxSize];
-    // srand(time(0)); // 设置随机数种子
-    // for (int i = 0; i < MaxSize; i++) {
-    //     nums[i] = rand() % 5; // 生成随机数并赋值给数组元素
-    // }
-    TreeNode *t = createBST(nums, 7);
-    return t;
-}
 
-
+#include "../include/my_link.h"
 /**
  * 算法题4正确：已知一个无符号整数number，写一算法，将其转换为八进制数(要求用链栈来实现)
  * 除数留余法

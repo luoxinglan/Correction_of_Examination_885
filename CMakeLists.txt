@@ -8,4 +8,18 @@ add_executable(Correction_of_Examination_885 src/main.c
         include/test2014.h
         src/test2013.c
         src/test2014.c
+        include/my_link.h
+        src/my_link.c
+        src/test2002.c
+        include/test2002.h
+        include/test2004.h
+        src/test2004.c
+        include/my_tree.h
+        src/my_tree.c
+        include/my_list.h
+        include/test2015.h
+        src/test2015.c
+        include/config.h
+        src/compare.c
+        include/compare.h
 )

@@ -25,14 +25,6 @@
  */
 #ifndef TEST2014_H
 #define TEST2014_H
-#define MaxSize 20
-
-//顺序表
-typedef struct SqList {
-    int data[MaxSize];
-    int len;
-} SqList;
-
 
 void showCharConst();
 

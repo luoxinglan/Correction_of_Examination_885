@@ -3,6 +3,8 @@
 //
 
 #include "../include/test2014.h"
+#include "../include/config.h"
+
 
 #include <stdio.h>
 #include <string.h>
@@ -20,10 +22,11 @@ void showCharConst() {
 
 //
 /**
- * 编程题2自增符号优先级高于取值符号：
+ * 编程题2正确：
  * 从键盘上输入两个字符集5t71str2，合并这两个字符串到 str3 中，
  * 具体规则如下:str1 的第一个字符+str2 的第一个字符，str1 的第二个字符+str2的第二个字符…
- * 如果其中一个字符串合并完毕，将剩余的字符串直接加到str3 之后
+ * 如果其中一个字符串合并完毕，将剩余的字符串直接加到str3 之后。
+ * ①自增符号优先级高于取值符号②字符串输入gets()、fgets()
  */
 void mergeStrings2() {
     char st1[MaxSize], st2[MaxSize], st3[MaxSize * 2];
@@ -83,7 +86,6 @@ float sumOfSequence(const int n) {
  * @param l_str 主字符串
  * @param s_str 模式串
  * @param r_str 替换字符串
- * @param pos 待替换的位置
  */
 void replaceSubString(char l_str[], char s_str[], char r_str[]) {
     char *pos = strstr(l_str, s_str); //找到首次匹配的地址
@@ -118,7 +120,7 @@ void S_R_substring() {
     printf("The replaced string is: %s\n\n", l_str);
 }
 
-
+#include "../include/my_list.h"
 /**
  * 算法设计题1有一个顺序表L，其元素为整型数据，设计一个算法，
  * 将L中所有小干1)表头 元素的整数放在前半部分，大于表头元素的整数放在后半部分，数组下标从1开始存储。
