@@ -20,6 +20,6 @@ add_executable(Correction_of_Examination_885 src/main.c
         include/test2015.h
         src/test2015.c
         include/config.h
-        src/compare.c
-        include/compare.h
+        src/sort.c
+        include/sort.h
 )

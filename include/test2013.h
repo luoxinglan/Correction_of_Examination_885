@@ -42,8 +42,6 @@ void mergeSortStrings2013();
 
 void permutation(int n);
 
-void swapInt(int *a, int *b);
-
 void initList2Data(LinkList2Data l, int n);
 
 void bubbleSortList2Data(LinkList2Data l);

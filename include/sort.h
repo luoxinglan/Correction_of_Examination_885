@@ -7,7 +7,15 @@
 #ifndef COMPARE_H
 #define COMPARE_H
 
+void swapInt(int *a, int *b);
+
 int charCmp(const void *a, const void *b);
 
 int intCmp(const void *a, const void *b);
+
+void mergeSort(int nums[], int low, int high);
+
+void heapSort(int num[], int size);
+
+void quickSort(int num[], int low, int high);
 #endif //COMPARE_H

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "../include/config.h"
+#include "../include/sort.h"
 #include "../include/test2002.h"
 #include "../include/test2004.h"
 #include "../include/test2013.h"
@@ -34,6 +35,12 @@ void basicKnowledge() {
     precedence_increment_modulus();
 }
 
+void sorts() {
+    int a[] = {5, 6, 7, 1, 2, 9, 8, 4, 3};
+    // mergeSort(a, 0, 2);
+    // heapSort(a, 9);
+    quickSort(a, 0, 8);
+}
 
 void fun2004() {
     char s[] = "hello world";
@@ -92,6 +99,6 @@ int main(void) {
     // fun2013();
     // fun2014();
     // fun2015();
-
+    sorts();
     return 0;
 }

@@ -61,7 +61,7 @@ float calcuPAI(float x) {
 }
 
 
-#include "../include/compare.h"
+#include "../include/sort.h"
 
 /**
  * 代码题4正确：输入两个字符串，将两个字符串合并，然后將合并后的字符串中的字符按照 ASCI码顺序输出。同2013一样

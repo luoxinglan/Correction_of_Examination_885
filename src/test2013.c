@@ -15,6 +15,7 @@
 
 #include "../include/test2013.h"
 #include "../include/config.h"
+#include "../include/sort.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -103,7 +104,6 @@ void unevenN(int n) {
 //代码题3正确：输入两个字符串，将两个学符事合并，并按照ASCII码顺序将合并后的字符串输出。
 #include <string.h>
 #include <stdlib.h>//有qsort
-#include "../include/compare.h"
 
 /**
  * 代码题3正确：输入两个字符串，将两个学符事合并，并按照ASCII码顺序将合并后的字符串输出。
@@ -154,16 +154,7 @@ void permutation(int n) {
 
 //代码题5：构造一个链表、具体要求如下:该链表每个结点都包含两个整数，讲所有结点按照第一个整数从小到关排序，如果第一个整数相同，则按第二个整数从小到大排序。
 #include <stdbool.h>
-/**
- * 交换两个整数的值
- * @param a 变量1地址
- * @param b 变量2地址
- */
-void swapInt(int *a, int *b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+
 
 /**
  * 头插法插入双数据节点

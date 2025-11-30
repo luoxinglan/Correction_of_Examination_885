@@ -127,7 +127,7 @@ void S_R_substring() {
  * (关键代码请给出注释)
  * @param l 顺序表地址
  */
-void partition(SqList *l) {
+void partL(SqList *l) {
     int pivot = l->data[1];
     int low = 1, high = l->len;
     while (low < high) {
@@ -148,7 +148,7 @@ void partition(SqList *l) {
  */
 void partitionSqList() {
     SqList l = {{0, 9, 1, 2, 3, 4, 5, 6, 7, 8}, 9};
-    partition(&l);
+    partL(&l);
 }
 
 
