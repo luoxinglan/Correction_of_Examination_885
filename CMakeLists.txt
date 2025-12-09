@@ -22,4 +22,12 @@ add_executable(Correction_of_Examination_885 src/main.c
         include/config.h
         src/sort.c
         include/sort.h
+        src/test2016.c
+        include/test2016.h
+        src/test2017.c
+        include/test2017.h
+        src/test2018.c
+        include/test2018.h
+        include/test2019.h
+        src/test2019.c
 )

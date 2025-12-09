@@ -54,11 +54,6 @@ Tree initTree() {
     //首先随便初始化一个树。就创建一个BST吧。
     int nums[] = {7, 4, 5, 6, 1, 8, 1};
     int n = 7;
-    // int nums[MaxSize];
-    // srand(time(0)); // 设置随机数种子
-    // for (int i = 0; i < MaxSize; i++) {
-    //     nums[i] = rand() % 5; // 生成随机数并赋值给数组元素
-    // }
     TreeNode *t = createBST(nums, 7);
     return t;
 }

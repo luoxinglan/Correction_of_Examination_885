@@ -11,13 +11,19 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "../include/config.h"
+#include "../include/my_link.h"
 #include "../include/sort.h"
 #include "../include/test2002.h"
 #include "../include/test2004.h"
 #include "../include/test2013.h"
 #include "../include/test2014.h"
 #include "../include/test2015.h"
+#include "../include/test2016.h"
+#include "../include/test2017.h"
+#include "../include/test2018.h"
+#include "../include/test2019.h"
 
 void basicKnowledge() {
     sizeOfType();
@@ -33,13 +39,25 @@ void basicKnowledge() {
     a.i = 5;
     unionAsFunParam(a);
     precedence_increment_modulus();
+
+    typeChange();
+}
+
+void mathFunc() {
+    fabs(-1.0); //返回函数绝对值。
+    pow(-1.0, 2.0); //返回-1的平方。
+    getc(stdin); //需要一个 FILE* 类型的参数；可以从任意指定的文件流中读取字符。
+    getchar(); //没有参数；固定从标准输入流 stdin 读取字符。
 }
 
 void sorts() {
-    int a[] = {5, 6, 7, 1, 2, 9, 8, 4, 3};
+    int *a = randomArray(7, 0, 16);
+    printArray(a, 7);
+    bubbleSort(a, 7);
     // mergeSort(a, 0, 2);
-    // heapSort(a, 9);
-    quickSort(a, 0, 8);
+    // heapSort(a, 7);
+    // quickSort(a, 0, 8);
+    printArray(a, 7);
 }
 
 void fun2004() {
@@ -86,11 +104,46 @@ void fun2015() {
     float pai = calcuPAI(0.112);
     char s1[MaxSize * 2], s2[MaxSize];
     puts("enter the s1:");
-    fgets(s1, MaxSize * 2, stdin);
+    gets(s1); //不能用fgets，否则会把\n也读入字符串。长度就不对了。
     puts("enter the s2:");
-    fgets(s2, MaxSize, stdin);
+    gets(s2); //不能用fgets，否则会把\n也读入字符串。长度就不对了。
     mergeSortStrings2015(s1, s2);
     sortSortStrings();
+}
+
+void fun2016() {
+    printSymmetricalLetterSequence('E');
+    bool res = isPalindrome();
+    printSortedLinkList();
+}
+
+void fun2017() {
+    char s[MaxSize];
+    gets(s);
+    deleteSpaceInString(s);
+    puts(s);
+
+    //指针数组和数组指针的用法
+    intPointerArray();
+    //函数指针数组的用法
+    executeFunctionPointer();
+
+    int res = sumOfArrays2017(3);
+
+    //双向循环链表
+    DLinkList dl = initDLinkList(5);
+    outputDLinkList(dl, 0);
+
+    //删除单链表中最小元素
+    LinkList l = initLinkList(5);
+    outputLinkList(l);
+    deleteLintListMin(l);
+    outputLinkList(l);
+}
+
+void fun2019() {
+    char s[] = "abbcccddddeeeee";
+    repeatedLetters(s); //a3b2c4
 }
 
 int main(void) {
@@ -99,6 +152,9 @@ int main(void) {
     // fun2013();
     // fun2014();
     // fun2015();
-    sorts();
+    // fun2016();
+    // fun2017();
+    fun2019();
+    // sorts();
     return 0;
 }

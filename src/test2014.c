@@ -35,7 +35,7 @@ void mergeStrings2() {
     // gets(st1);//它的任务是从 stdin 流中读取字符串，直至接收到换行符或 EOF 时停止，并将读取的结果存放在 buffer 指针所指向的字符数组中
     // gets(st2);
     // fgets(st1, MaxSize, stdin);//会从缓冲区吃掉MaxSize个元素
-    // fgets(st2, MaxSize, stdin);
+    // fgets(st2, MaxSize, stdin);//不能用fgets，否则会把\n也读入字符串。长度就不对了。
     char *a = st1, *b = st2, *c = st3;
     while (*a != '\0' && *b != '\0') {
         *(c++) = *(a++);

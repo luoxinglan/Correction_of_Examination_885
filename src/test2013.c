@@ -18,7 +18,6 @@
 #include "../include/sort.h"
 
 #include <stdio.h>
-#include <time.h>
 
 /**
  * 解释了各种数据类型的字节大小
@@ -218,8 +217,7 @@ void processLink2Data(int n) {
  * @param n 单链表节点个数
  */
 void processLinkList(int n) {
-    LinkList l = (LNode *) malloc(sizeof(LNode));
-    initLinkList(l, n);
+    LinkList l = initLinkList(n);
     reverseLinkList(l);
     outputLinkList(l);
 }
