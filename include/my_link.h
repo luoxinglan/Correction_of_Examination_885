@@ -23,11 +23,19 @@ typedef struct DLNode {
 
 void headInsert(LinkList l, int n);
 
+LNode *findTail(LinkList l);
+
 LinkList initLinkList(int n);
+
+LinkList initLinkListNoHead(int n);
 
 void reverseLinkList(LinkList l);
 
+void reverseLinkListNoHead(LinkList *l);
+
 void outputLinkList(LinkList l);
+
+void outputLinkListNoHead(LinkList l);
 
 void deleteLintListMin(LinkList l);
 

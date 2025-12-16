@@ -30,4 +30,10 @@ add_executable(Correction_of_Examination_885 src/main.c
         include/test2018.h
         include/test2019.h
         src/test2019.c
+        include/test2020.h
+        src/test2020.c
+        include/print_graphs.h
+        src/print_graphs.c
+        include/test2022.h
+        src/test2022.c
 )

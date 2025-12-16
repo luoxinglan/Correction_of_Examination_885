@@ -26,6 +26,42 @@ void headInsert(LinkList l, int n) {
 }
 
 /**
+ * 返回单链表的最后一个结点，不论是否带头结点。
+ * @param l 单链表
+ * @return 单链表的最后一个节点
+ */
+LNode *findTail(LinkList l) {
+    if (l == NULL) {
+        return NULL;
+    }
+    if (l->next == NULL) {
+        return l;
+    }
+    LNode *p = l->next;
+    while (p->next) {
+        p = p->next;
+    }
+    return p;
+}
+
+/**
+ * 尾插法插入单链表，每次插入会更新到最新的尾结点。
+ * @param l 头结点指针。
+ * @param rear 尾结点指针的指针，每次插入会更新到最新的尾结点
+ * @param n 待插入的数据
+ */
+void tailInsert(LinkList l, LNode **rear, int n) {
+    if (l == NULL) {
+        return;
+    }
+    LNode *p = (LNode *) malloc(sizeof(LNode));
+    p->data = n;
+    p->next = NULL;
+    (*rear)->next = p; //注意：->成员选择运算符优先级高于*指针运算符。
+    *rear = p;
+}
+
+/**
  * 初始化单链表（头插法）。
  * @param l 单链表头结点指针
  * @param n 待插入的数据
@@ -39,6 +75,30 @@ LinkList initLinkList(int n) {
         int temp = 0;
         scanf("%d", &temp);
         headInsert(l, temp);
+    }
+    return l;
+}
+
+/**
+ * 初始化无头结点单链表（尾插法）。
+ * @param l 单链表头结点指针
+ * @param n 待插入的数据
+ */
+LinkList initLinkListNoHead(int n) {
+    LinkList l = (LinkList) malloc(sizeof(LNode));
+    l->next = NULL;
+    LNode *rear = findTail(l);
+    for (int i = 0; i < n; i++) {
+        // LNode *p = (LNode *) malloc(sizeof(LNode));
+        printf("please enter %d node: ", i);
+        int temp = 0;
+        scanf("%d", &temp);
+        if (i == 0) {
+            //是第一个结点的话不用插入。
+            l->data = temp;
+        } else {
+            tailInsert(l, &rear, temp);
+        }
     }
     return l;
 }
@@ -60,6 +120,23 @@ void reverseLinkList(LinkList l) {
 }
 
 /**
+ * 原地逆置无头结点单链表。注意：由于不带头结点，所以头指针要修改。
+ * @param l 单链表头结点指针
+ */
+void reverseLinkListNoHead(LinkList *l) {
+    //注意：由于不带头结点，所以头指针要修改。
+    //注意：->成员选择运算符优先级高于*指针运算符。
+    LNode *p = (*l)->next, *q;
+    (*l)->next = NULL;
+    while (p) {
+        q = p->next;
+        p->next = *l;
+        *l = p;
+        p = q;
+    }
+}
+
+/**
  * 输出单链表。
  * @param l 单链表头结点指针
  */
@@ -69,6 +146,17 @@ void outputLinkList(LinkList l) {
     }
     printf("\n");
 }
+
+/**
+ * 输出无头结点单链表。
+ * @param l 单链表头结点指针
+ */
+void outputLinkListNoHead(LinkList l) {
+    for (LNode *p = l; p; p = p->next) {
+        printf("%3d", p->data);
+    }
+    printf("\n");
+};
 
 /**
  * 删除单链表中最小元素。

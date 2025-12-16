@@ -66,7 +66,8 @@ int intCmp(const void *a, const void *b) {
 void bubbleSort(int *arr, int size) {
     for (int i = 0; i < size; i++) {
         bool swapped = false;
-        for (int j = 1; j < size; j++) {
+        for (int j = 1; j < size - i; j++) {
+            //大的元素往后移动。每一趟排序确定一个最大元素的位置。故size-i
             if (arr[j - 1] > arr[j]) {
                 swapInt(&arr[j - 1], &arr[j]);
                 swapped = true;

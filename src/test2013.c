@@ -35,9 +35,10 @@ void sizeOfType() {
     printf("Size of char=%d\n", (int) sizeof(char));
     printf("Size of int=%d\n", (int) sizeof(int));
     printf("Size of long int=%d\n", (int) sizeof(long int));
-    printf("Size of float=%d\n", (int) sizeof(float));
     printf("Size of long long int=%d\n", (int) sizeof(long long int));
+    printf("Size of float=%d\n", (int) sizeof(float));
     printf("Size of double=%d\n", (int) sizeof(double));
+    printf("Size of long double=%d\n", (int) sizeof(long double));
     printf("\n");
 }
 
@@ -124,7 +125,7 @@ void mergeSortStrings2013() {
  * @param remnant 还有多少位没有确定
  * @param existed_s 已经确定的前面的字符串
  */
-void permutationSub(int remnant, char *existed_s) {
+void permutationSub2013(int remnant, char *existed_s) {
     char res[3][MaxSize] = {0}; //存储每一层递归的每一种字母的结果
     char tail[2] = {0}; //尾部待插入的字符
     char provided[] = {'a', 'b', 'c'}; //提供的可选的字符
@@ -138,7 +139,7 @@ void permutationSub(int remnant, char *existed_s) {
         strcpy(res[i], existed_s); //将已经确定的字符串复制到初始空字符串
         tail[0] = provided[i]; //第i种可能
         strcat(res[i], tail); //新确定的一个字符连接到已确定字符串后面
-        permutationSub(remnant - 1, res[i]); //递归处理剩下的字符串
+        permutationSub2013(remnant - 1, res[i]); //递归处理剩下的字符串
     }
 }
 
@@ -146,9 +147,9 @@ void permutationSub(int remnant, char *existed_s) {
  * 代码题4不会：输出长度为 n 的由 a、b、c构成的排列串，如输入n=2，输出 aa、ab、ac、ba、bb、bc、ca、cb、cc，用递归算法编程。
  * @param n 字符串排列的长度
  */
-void permutation(int n) {
+void permutation2013(int n) {
     char s[MaxSize] = {0};
-    permutationSub(n, s);
+    permutationSub2013(n, s);
 }
 
 //代码题5：构造一个链表、具体要求如下:该链表每个结点都包含两个整数，讲所有结点按照第一个整数从小到关排序，如果第一个整数相同，则按第二个整数从小到大排序。

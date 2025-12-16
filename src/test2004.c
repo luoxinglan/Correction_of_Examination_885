@@ -22,6 +22,7 @@ void data_representation() {
     //字符串输出
     char *s = "\t\" NULL\111?\n"; //\t制表符是8个空格，\111是八进制，\n也会输出。
     printf("%s", s);
+    printf("\n");
 }
 
 /**
@@ -47,11 +48,14 @@ void format_control_of_printf() {
 
     /*浮点数的格式控制：省略零、控制精度*/
     float i = 1;
+    long double x = 0.123456789123456789;
     printf("/*Floating-point format control: omit zeros, control precision*/\n");
     printf("Omitting zeros by using %%g: %f, %g\n", i / 2, i / 2); //%f输出浮点数，%g省略不必要的零
     printf("%%f outputs floating-point numbers with only 6 digits of precision: %f\n", i / 3); //%f输出浮点数只能保留6位精度
     printf("NO %%gf: %gf\n", i / 2); //没有%gf这种组合用法！！！0.5f注意到多输出了一个f
-    printf("%%3.5f: %3.5f\n",M_PI); //3位数据的最小宽度、保留到小数点后5位，故数据宽度一共7位
+    printf("%%3.4f: %3.4f\n", M_PI); //3位数据的最小宽度、保留到小数点后4位，故数据宽度一共6位
+    printf("%%lf: %f\n", M_PI); //lf小数点后六位
+    printf("%%llf: %f\n", M_PI); //llf，不会考的。long double
     printf("\n");
 
     /*指数*/

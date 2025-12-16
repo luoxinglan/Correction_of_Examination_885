@@ -20,7 +20,7 @@ void referenceToArray() {
  */
 void unionAsFunParam(union unity data) {
     data.f = 0.2;
-    printf("data.f = %f\n", data.f);
+    printf("unionAsFunParam data.f = %f\n\n", data.f);
 }
 
 /**

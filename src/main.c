@@ -24,6 +24,9 @@
 #include "../include/test2017.h"
 #include "../include/test2018.h"
 #include "../include/test2019.h"
+#include "../include/test2020.h"
+#include "../include/test2022.h"
+#include "../include/print_graphs.h"
 
 void basicKnowledge() {
     sizeOfType();
@@ -41,6 +44,12 @@ void basicKnowledge() {
     precedence_increment_modulus();
 
     typeChange();
+
+    pointerIncrease();
+}
+
+void printGraph() {
+    printTriangleHollow(4);
 }
 
 void mathFunc() {
@@ -73,7 +82,7 @@ void fun2013() {
     unevenN(4);
     mergeSortStrings2013();
     // permutationSub(); //没在头文件中声明的其他文件函数无法使用
-    permutation(3);
+    permutation2013(3);
     processLink2Data(8);
     /*
       15 16
@@ -143,7 +152,37 @@ void fun2017() {
 
 void fun2019() {
     char s[] = "abbcccddddeeeee";
+    char s2[] = "";
     repeatedLetters(s); //a3b2c4
+}
+
+void fun2020() {
+    permutation2020();
+    findReversibleNum();
+    printf("sumOfArray: %f\n\n", sumOfArray(1.0 / 2, 0));
+    printDiamondHollowXIf(10);
+}
+
+void fun2022() {
+    printTrapezoid2(5);
+    outPutBinary(11);
+    printf("\n");
+    printf("count of sub strings :%d\n\n", countSubStrings("abababababac", "ab"));
+    complex num1 = {1, 1}, num2 = {1, -1}, num3 = complexProduct(num1, num2);
+    printComplex(num3);
+
+    //算法题1正确：逆置无头单链表
+    // LinkList h = initLinkListNoHead(5);
+    // outputLinkListNoHead(h);
+    // reverseLinkListNoHead(&h); //由于不带头结点，所以要修改首结点指针的值。
+    // outputLinkListNoHead(h);
+
+    //算法题2正确：按行给二维数组排序
+    int a[N][N];
+    inputMatrix(a,N);
+    printMatrix(a,N);
+    sortMatrix(a,N);
+    printMatrix(a,N);
 }
 
 int main(void) {
@@ -154,7 +193,10 @@ int main(void) {
     // fun2015();
     // fun2016();
     // fun2017();
-    fun2019();
+    // fun2019();
+    // fun2020();
+    fun2022();
     // sorts();
+    // printGraph();
     return 0;
 }

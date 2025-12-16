@@ -35,6 +35,7 @@ double execute(const double x, double (*func)(double)) {
  * 指针数组！数组指针！总结：先算*是指针，先算[]是数组。
  */
 void intPointerArray() {
+    //运算顺序：数组、指针、函数，类型：函数指针数组
     int *intArray[3]; //指针【数组】。[3]首先与intArray结合为intArray[3]，这是【数组】形式。然后intArray与*结合，*表示这个数组是指针类型的。
     int a[][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     for (int i = 0; i < 3; i++) {
@@ -48,7 +49,7 @@ void intPointerArray() {
  * 函数指针的使用！函数指针数组！总结：先算[]是数组，*是指针，(type)是函数。
  */
 void executeFunctionPointer() {
-    double (*func[3])(double); //函数指针数组，基类型是(*func)(double)
+    double (*func[3])(double); //函数指针数组，基类型是(*func)(double)。运算顺序：数组、指针、函数，类型：函数指针数组
     //func首先与[3]结合，是【数组】。func[3]与*结合，是【指针数组】。*func[3]与()结合，指针的基类型是参数为一个double的函数(*func)(double)
     double x = 1;
     func[0] = sin;

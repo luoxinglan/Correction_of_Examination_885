@@ -40,7 +40,7 @@ void unevenN(int n);
 
 void mergeSortStrings2013();
 
-void permutation(int n);
+void permutation2013(int n);
 
 void initList2Data(LinkList2Data l, int n);
 
