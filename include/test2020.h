@@ -9,7 +9,7 @@ void pointerIncrease();
 
 void permutation2020();
 
-void findReversibleNum();
+void findReversibleNum2020();
 
 double sumOfArray(double x, int n);
 #endif //TEST2020_H

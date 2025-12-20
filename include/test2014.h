@@ -32,7 +32,7 @@ void mergeStrings2();
 
 float sumOfSequence(const int n);
 
-void S_R_substring();
+void S_R_substring2014();
 
 void partitionSqList();
 

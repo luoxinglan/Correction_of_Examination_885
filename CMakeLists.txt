@@ -36,4 +36,6 @@ add_executable(Correction_of_Examination_885 src/main.c
         src/print_graphs.c
         include/test2022.h
         src/test2022.c
+        include/test2023-2025.h
+        src/test2023-2025.c
 )

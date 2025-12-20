@@ -35,7 +35,11 @@ void printHexagonHollow(int n);
 
 void printTriangleDigital(int n);
 
+void printTriangleLetter(int n);
+
 void printTriangleHollow(int n);
+
+void printRightTriangleNumber(int n);
 
 void printTriangleYanghui_recursive(int n);
 

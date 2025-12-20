@@ -127,7 +127,7 @@ void mergeSort(int nums[], int low, int high) {
         int mid = (low + high) / 2; //此元素右边为右半有序表
         mergeSort(nums, low, mid);
         mergeSort(nums, mid + 1, high);
-        merge(nums, low, mid, high);
+        merge(nums, low, mid, high); //因为一个元素肯定是有序的。
     }
 }
 

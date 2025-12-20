@@ -110,7 +110,7 @@ void replaceSubString(char l_str[], char s_str[], char r_str[]) {
  * 首先在长字符串中查找匹配字符串如果有匹配字符串，则用替换字符电代。
  * 例如:输入 abcdd、bc、 输出为 aadd
  */
-void S_R_substring() {
+void S_R_substring2014() {
     char l_str[MaxSize * 2], //主字符串
             s_str[MaxSize], //模式串
             r_str[MaxSize]; //替换字符串

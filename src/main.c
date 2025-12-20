@@ -26,6 +26,7 @@
 #include "../include/test2019.h"
 #include "../include/test2020.h"
 #include "../include/test2022.h"
+#include "../include/test2023-2025.h"
 #include "../include/print_graphs.h"
 
 void basicKnowledge() {
@@ -49,7 +50,8 @@ void basicKnowledge() {
 }
 
 void printGraph() {
-    printTriangleHollow(4);
+    // printTriangleHollow(4);
+    printRightTriangleNumber(4);
 }
 
 void mathFunc() {
@@ -103,7 +105,7 @@ void fun2013() {
 void fun2014() {
     mergeStrings2();
     sumOfSequence(1);
-    S_R_substring();
+    S_R_substring2014();
     partitionSqList();
     searchTreeXLevel(1);
 }
@@ -158,7 +160,7 @@ void fun2019() {
 
 void fun2020() {
     permutation2020();
-    findReversibleNum();
+    findReversibleNum2020();
     printf("sumOfArray: %f\n\n", sumOfArray(1.0 / 2, 0));
     printDiamondHollowXIf(10);
 }
@@ -172,10 +174,10 @@ void fun2022() {
     printComplex(num3);
 
     //算法题1正确：逆置无头单链表
-    // LinkList h = initLinkListNoHead(5);
-    // outputLinkListNoHead(h);
-    // reverseLinkListNoHead(&h); //由于不带头结点，所以要修改首结点指针的值。
-    // outputLinkListNoHead(h);
+    LinkList h = initLinkListNoHead(5);
+    outputLinkListNoHead(h);
+    reverseLinkListNoHead(&h); //由于不带头结点，所以要修改首结点指针的值。
+    outputLinkListNoHead(h);
 
     //算法题2正确：按行给二维数组排序
     int a[N][N];
@@ -183,6 +185,22 @@ void fun2022() {
     printMatrix(a,N);
     sortMatrix(a,N);
     printMatrix(a,N);
+}
+
+void fun2023() {
+    printTriangleLetter(5);
+    findReversibleNum2023();
+    printf("sumOfArray: %f\n\n", sumOfArray2023(1, 2, 2));
+    S_R_substring2023();
+}
+
+void fun2024() {
+    splitEvenNumber();
+}
+
+void fun2025() {
+    char s[] = "123456789";
+    outputReversedString(s);
 }
 
 int main(void) {
@@ -195,7 +213,10 @@ int main(void) {
     // fun2017();
     // fun2019();
     // fun2020();
-    fun2022();
+    // fun2022();
+    // fun2023();
+    // fun2024();
+    fun2025();
     // sorts();
     // printGraph();
     return 0;

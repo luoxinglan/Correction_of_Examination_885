@@ -46,6 +46,7 @@ void sizeOfType() {
  * 展示常见的重要的字符型常量的值。
  */
 void importantChar() {
+    printf("Important Char: '%c'=%d\n", ' ', ' ');
     printf("Important Char: '%c'=%d\n", '0', '0');
     printf("Important Char: '%c'=%d\n", '1', '1');
     // printf("Important Char: '%c'=%d\n",'9','9');

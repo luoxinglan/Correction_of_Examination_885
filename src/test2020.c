@@ -15,8 +15,8 @@ void pointerIncrease() {
     printf("A value     a[0]    : %d\n", a[0]); //数组首值
     printf("A pointer   p       : %p\n", p); //指针
     printf("A value     *(p++)  : %d\n", *(p++)); //注意：指针自增，*优先级比++高。
-    printf("A pointer   p       : %p\n", p); //指针自增后，指向下一个字节。
-    printf("A value     *p      : %d\n", *p); //指针自增后，指向下一个字节。
+    printf("A pointer   p       : %p\n", p); //指针自增后，指向下一个sizeof(基类型)。
+    printf("A value     *p      : %d\n", *p); //指针自增后，指向下一个sizeof(基类型)。
 }
 
 /**
@@ -69,7 +69,7 @@ int eachDigit(int n[], int x) {
     }
     for (int i = 0; x > 0; x /= 10, i++) {
         //注意：i的值也要更新！
-        n[i] = x % 10;
+        n[i] = x % 10; //求每一位
         count++;
     }
     return count;
@@ -93,7 +93,7 @@ bool isReversible(int n[], int count) {
 /**
  * 代码题4：输出所有小于2019的反数
  */
-void findReversibleNum() {
+void findReversibleNum2020() {
     for (int i = 0; i < 2019; i++) {
         int n[4] = {0};
         int count = eachDigit(n, i);

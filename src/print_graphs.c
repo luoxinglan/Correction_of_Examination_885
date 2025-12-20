@@ -445,6 +445,26 @@ void printTriangleDigital(int n) {
 }
 
 /**
+ * 2023代码题1正确：打印实心字母三角形。
+ * @param n 三角形边长
+ */
+void printTriangleLetter(int n) {
+    for (int i = 0; i < n; i++) {
+        //n行
+        for (int j = 0; j < n + i; j++) {
+            //每一行的空格
+            if (j < n - i - 1) {
+                printf(" ");
+            } else {
+                printf("%c", i + 'A');
+            }
+        }
+        printf("\n");
+    }
+}
+
+
+/**
  * 2020代码题1：打印空心数字三角形。
  * @param n 三角形边长
  */
@@ -469,6 +489,22 @@ void printTriangleHollow(int n) {
         printf("\n");
     }
 }
+
+/**
+ * 2025代码题1：输出数字直角三角形。
+ * @param n 直角三角形边长
+ */
+void printRightTriangleNumber(int n) {
+    for (int i = 0; i < n; i++) {
+        int a = n - i;
+        for (int j = 0; j < i + 1; j++) {
+            printf("%3d", a);
+            a += n - j;
+        }
+        printf("\n");
+    }
+}
+
 
 /**
  *
